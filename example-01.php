@@ -19,13 +19,17 @@ rewind($fp);
 
 fputs($fp, "this is an example.");
 
-print "[".stream_get_contents($fp)."]\n";
+#print "[".stream_get_contents($fp)."]\n";
 
 rewind($fp);
 #fseek($fp, -1, SEEK_END);
 
-print "[".stream_get_contents($fp)."]\n";
+#print "[".stream_get_contents($fp)."]\n";
 
+fclose($fp);
+
+$fp = fopen("php://memory", 'rw+');
+print stream_get_contents($fp);
 fclose($fp);
 
 print "mem usage: ".round(memory_get_usage()/1048576,2)."M\n";

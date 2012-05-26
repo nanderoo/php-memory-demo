@@ -6,10 +6,10 @@ print "mem limit: ".ini_get("memory_limit")."\n";
 #$membuffer = 10 * 1024 * 1024;
 #$membuffer = 50 * 1024 * 1024;
 #$membuffer = 100 * 1024 * 1024;
-#$membuffer = 54 * 1024 * 1024;
+$membuffer = 54 * 1024 * 1024;
 
-#$fp = fopen("php://temp/maxmemory:$membuffer", "rw+");
-$fp = fopen("php://temp/", "rw+");
+$fp = fopen("php://temp/maxmemory:$membuffer", "rw+");
+#$fp = fopen("php://temp/", "rw+");
 
 /*
  Maximum amount of data to keep in memory before using a temporary file, in bytes. 

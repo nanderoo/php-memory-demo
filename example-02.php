@@ -5,8 +5,8 @@ print "mem limit: ".ini_get("memory_limit")."\n";
 
 $fp = fopen("php://memory", "rw+");
 
-$bp = fopen("bacon-ipsum.txt", "r");
-#$bp = fopen("bacon-ipsum-small.txt", "r");
+#$bp = fopen("bacon-ipsum.txt", "r");
+$bp = fopen("bacon-ipsum-small.txt", "r");
 
 fputs($fp, stream_get_contents($bp));
 

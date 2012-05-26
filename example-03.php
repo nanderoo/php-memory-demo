@@ -10,13 +10,12 @@ $bp = fopen("bacon-ipsum.txt", "r");
 
 #print "peak use : ".round(memory_get_peak_usage()/1048576,2)."M\n";
 
-fputs($fp, stream_get_contents($bp));
+#fputs($fp, stream_get_contents($bp));
+stream_copy_to_stream($bp, $fp);
 
-/*
-while (!feof($bp)) {
-  fputs($fp, fread($bp, 8192));
-}
-*/
+#while (!feof($bp)) {
+#  fputs($fp, fread($bp, 8192));
+#}
 
 rewind($fp);
 
